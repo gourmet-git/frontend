@@ -1,0 +1,22 @@
+$card-max-width: 300px;
+$card-margin-horizontal: 10px;
+
+.dishes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dish-card {
+  max-width: $card-max-width;
+  margin: 0 $card-margin-horizontal;
+}
+
+.dish-image {
+  max-width: $card-max-width;
+}
+
+.dish-name {
+  text-align: center;
+}

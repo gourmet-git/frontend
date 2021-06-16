@@ -1,0 +1,6 @@
+<div class="dishes">
+  <div class="dish-card" *ngFor="let dish of dishes">
+    <img class="dish-image" [src]="dish.photo_path" />
+    <h2 class="dish-name">{{ dish.name }}</h2>
+  </div>
+</div>
