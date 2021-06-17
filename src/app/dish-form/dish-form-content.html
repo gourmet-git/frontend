@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h4 class="modal-title">Submit a recipe!</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="checkoutForm">
+    <div>
+      <label for="name"> Name </label>
+      <input id="name" type="text" formControlName="name" />
+    </div>
+
+    <div>
+      <label for="address"> Address </label>
+      <input id="address" type="text" formControlName="address" />
+    </div>
+
+    <button class="button" type="submit">Purchase</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close('Close click')"
+  >
+    Close
+  </button>
+</div>

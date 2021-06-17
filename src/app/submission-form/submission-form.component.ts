@@ -12,6 +12,7 @@ export class SubmissionFormContent {
 @Component({
   selector: "submission-form-component",
   templateUrl: "./submission-form.component.html",
+  styleUrls: ["./submission-form.component.scss"],
 })
 export class SubmissionFormComponent {
   constructor(private modalService: NgbModal) {}

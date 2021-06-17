@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -9,6 +10,7 @@ import { HeaderComponent } from "./header/header.component";
 import { DishesComponent } from "./dishes/dishes.component";
 import { SubmissionFormComponent } from "./submission-form/submission-form.component";
 import { DishComponent } from "./dish/dish.component";
+import { DishFormComponent } from "./dish-form/dish-form.component";
 
 @NgModule({
   declarations: [
@@ -17,8 +19,15 @@ import { DishComponent } from "./dish/dish.component";
     DishesComponent,
     SubmissionFormComponent,
     DishComponent,
+    DishFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

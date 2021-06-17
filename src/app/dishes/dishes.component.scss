@@ -1,4 +1,4 @@
-$card-max-width: 250px;
+$card-max-width: 220px;
 $card-margin-horizontal: 20px;
 
 .dishes {
@@ -21,4 +21,9 @@ $card-margin-horizontal: 20px;
 .dish-name,
 .dish-recipe-count {
   text-align: center;
+}
+
+dish-form-component {
+  width: $card-max-width;
+  height: $card-max-width;
 }
