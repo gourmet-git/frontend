@@ -5,6 +5,7 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "submission-form-content",
   templateUrl: "./submission-form-content.html",
+  styleUrls: ["./submission-form.component.scss"],
 })
 export class SubmissionFormContent {
   recipe = this.formBuilder.group({
@@ -43,7 +44,6 @@ export class SubmissionFormContent {
 @Component({
   selector: "submission-form-component",
   templateUrl: "./submission-form.component.html",
-  styleUrls: ["./submission-form.component.scss"],
 })
 export class SubmissionFormComponent {
   constructor(private modalService: NgbModal) {}
