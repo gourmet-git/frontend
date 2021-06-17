@@ -10,18 +10,45 @@
   </button>
 </div>
 <div class="modal-body">
-  <form [formGroup]="checkoutForm">
-    <div>
-      <label for="name"> Name </label>
-      <input id="name" type="text" formControlName="name" />
+  <form [formGroup]="dish">
+    <div class="form-group">
+      <label for="dish"> Name of dish </label>
+      <input
+        id="dish"
+        class="form-control"
+        type="text"
+        formControlName="dish"
+      />
     </div>
 
-    <div>
-      <label for="address"> Address </label>
-      <input id="address" type="text" formControlName="address" />
+    <div class="form-group">
+      <label for="photo"> URL of photo </label>
+      <input
+        id="photo"
+        class="form-control"
+        type="text"
+        formControlName="photo"
+      />
     </div>
 
-    <button class="button" type="submit">Purchase</button>
+    <div class="form-group">
+      <label for="num-recipes"> Number of recipes </label>
+      <input
+        id="num-recipes"
+        class="form-control"
+        type="text"
+        formControlName="num_recipes"
+      />
+    </div>
+
+    <button
+      (click)="onSubmit()"
+      class="button"
+      type="submit"
+      class="btn btn-primary"
+    >
+      Submit
+    </button>
   </form>
 </div>
 <div class="modal-footer">
