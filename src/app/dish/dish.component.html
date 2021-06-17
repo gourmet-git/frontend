@@ -6,16 +6,35 @@
     <!-- placeholder for maintaining grid formatting -->
     <h4 class="recipe-section-title"></h4>
 
-    <div class="recipes-list">
-      <div class="recipe-name" *ngFor="let recipe of recipes">
-        <p>{{ recipe.source }}</p>
+    <form [formGroup]="recipesList" class="recipes-list">
+      <div class="form-check" *ngFor="let recipe of recipes">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="recipe"
+          value="option1"
+        />
+        <label class="form-check-label" for="recipe">
+          {{ recipe.source }}
+        </label>
       </div>
-    </div>
-    <div class="recipes-list">
-      <div class="recipe-name" *ngFor="let recipe of recipes">
-        <p>{{ recipe.source }}</p>
+    </form>
+
+    <form [formGroup]="recipesList" class="recipes-list">
+      <div class="form-check" *ngFor="let recipe of recipes">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="recipe"
+          value="option1"
+        />
+        <label class="form-check-label" for="recipe">
+          {{ recipe.source }}
+        </label>
       </div>
-    </div>
+    </form>
   </div>
 
   <div class="recipe-section">

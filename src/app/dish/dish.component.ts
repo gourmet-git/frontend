@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { FormBuilder } from "@angular/forms";
 
 import { Dish, Recipe } from "../types";
 import { DishesService } from "../dishes.service";
@@ -12,10 +13,16 @@ import { DishesService } from "../dishes.service";
 export class DishComponent implements OnInit {
   dish: Dish | undefined;
   recipes: Recipe[] | undefined;
+  recipesList = this.formBuilder.group({
+    dish: "",
+    photo: "",
+    num_recipes: "",
+  });
 
   constructor(
     private route: ActivatedRoute,
-    private dishesService: DishesService
+    private dishesService: DishesService,
+    private formBuilder: FormBuilder
   ) {}
 
   async ngOnInit(): Promise<void> {
