@@ -8,7 +8,10 @@ import { AppComponent } from "./app.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HeaderComponent } from "./header/header.component";
 import { DishesComponent } from "./dishes/dishes.component";
-import { SubmissionFormComponent } from "./submission-form/submission-form.component";
+import {
+  SubmissionFormContent,
+  SubmissionFormComponent,
+} from "./submission-form/submission-form.component";
 import { DishComponent } from "./dish/dish.component";
 import {
   DishFormContent,
@@ -20,6 +23,7 @@ import {
     AppComponent,
     HeaderComponent,
     DishesComponent,
+    SubmissionFormContent,
     SubmissionFormComponent,
     DishComponent,
     DishFormComponent,
