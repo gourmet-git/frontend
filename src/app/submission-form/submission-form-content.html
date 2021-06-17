@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Submit a recipe!</h4>
+  <h4 class="modal-title">New Recipe for {{ dish }}</h4>
   <button
     type="button"
     class="close"
@@ -11,16 +11,6 @@
 </div>
 <div class="modal-body">
   <form [formGroup]="recipe">
-    <div class="form-group">
-      <label for="dish"> Dish </label>
-      <input
-        id="dish"
-        class="form-control"
-        type="text"
-        formControlName="dish"
-      />
-    </div>
-
     <div class="form-group">
       <label for="source"> Source </label>
       <input

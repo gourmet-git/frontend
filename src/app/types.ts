@@ -1,6 +1,7 @@
 export interface Dish {
+  id: string;
   name: string;
-  photo_path: string;
+  photo: string;
   num_recipes: number;
   recipes: any;
 }
