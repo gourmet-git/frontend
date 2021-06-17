@@ -7,6 +7,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HeaderComponent } from "./header/header.component";
 import { DishesComponent } from "./dishes/dishes.component";
 import { SubmissionFormComponent } from "./submission-form/submission-form.component";
+import { DishComponent } from './dish/dish.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SubmissionFormComponent } from "./submission-form/submission-form.compo
     HeaderComponent,
     DishesComponent,
     SubmissionFormComponent,
+    DishComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
