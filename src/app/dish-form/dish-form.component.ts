@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import {DishesService} from "../dishes.service";
 
 @Component({
   selector: "dish-form-content",
@@ -9,18 +10,20 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class DishFormContent {
   dish = this.formBuilder.group({
-    dish: "",
-    photo: "",
-    num_recipes: "",
+    name: "",
+    photo: ""
   });
 
   constructor(
     public activeModal: NgbActiveModal,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dishesService: DishesService
   ) {}
 
   onSubmit(): void {
-    console.warn("Your dish has been submitted!", this.dish.value);
+    const dish =  this.dish.value;
+    this.dishesService.saveDish(dish)
+        .then( d =>  console.log(d));
     this.dish.reset();
   }
 }
