@@ -1,5 +1,5 @@
 <div class="dishes">
-  <div *ngFor="let dish of dishes">
+  <div *ngFor="let dish of dishes | async">
     <a class="dish-card" [routerLink]="['/dishes', dish.name]">
       <img class="dish-image" [src]="dish.photo_path" />
       <h3 class="dish-name">{{ dish.name }}</h3>

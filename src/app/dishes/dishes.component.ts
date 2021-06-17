@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { dishes } from "../dishes";
+import { DishesService } from "../dishes.service";
 
 @Component({
   selector: "app-dishes",
@@ -8,9 +8,9 @@ import { dishes } from "../dishes";
   styleUrls: ["./dishes.component.scss"],
 })
 export class DishesComponent implements OnInit {
-  dishes = dishes;
+  dishes = this.dishesService.getDishes();
 
-  constructor() {}
+  constructor(private dishesService: DishesService) {}
 
   ngOnInit(): void {}
 }
