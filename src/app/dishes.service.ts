@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
-import { Dish } from "./types";
+import { Dish, Recipe } from "./types";
 
 @Injectable({
   providedIn: "root",
@@ -9,7 +9,17 @@ import { Dish } from "./types";
 export class DishesService {
   constructor(private http: HttpClient) {}
 
-  getDishes() {
-    return this.http.get<Dish[]>("/assets/dishes.json");
+  async getDishes() {
+    const dishes = await this.http
+      .get<Dish[]>("/assets/dishes.json")
+      .toPromise();
+    return dishes;
+  }
+
+  async getRecipes(dishName: string) {
+    const recipes = await this.http
+      .get<Recipe[]>("assets/recipes.json")
+      .toPromise();
+    return recipes.filter((recipe) => recipe.dish === dishName);
   }
 }

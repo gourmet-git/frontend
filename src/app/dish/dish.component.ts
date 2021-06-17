@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { Dish } from "../types";
+import { Dish, Recipe } from "../types";
 import { DishesService } from "../dishes.service";
 
 @Component({
@@ -11,6 +11,7 @@ import { DishesService } from "../dishes.service";
 })
 export class DishComponent implements OnInit {
   dish: Dish | undefined;
+  recipes: Recipe[] | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,10 +21,15 @@ export class DishComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     // First get the dish name from the current route.
     const routeParams = this.route.snapshot.paramMap;
-    const dishNameFromRoute = routeParams.get("dishName");
+    const dishName = routeParams.get("dishName");
 
     // Find the dish that corresponds with the name provided in route.
-    const dishes = await this.dishesService.getDishes().toPromise();
-    this.dish = dishes.find((dish) => dish.name === dishNameFromRoute);
+    const dishes = await this.dishesService.getDishes();
+    this.dish = dishes.find((dish) => dish.name === dishName);
+
+    // If dish exists, find recipes for that dish.
+    if (this.dish && dishName) {
+      this.recipes = await this.dishesService.getRecipes(dishName);
+    }
   }
 }

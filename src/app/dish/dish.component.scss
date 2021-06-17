@@ -1,0 +1,23 @@
+h4 {
+  width: 150px;
+  text-align: right;
+}
+
+.recipe-section {
+  display: flex;
+  margin: 20px 0;
+}
+
+.recipe-detail {
+  flex: 1 1 0;
+  padding: 0 20px;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ul,
+ol {
+  margin-left: 1rem;
+}

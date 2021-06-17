@@ -1,0 +1,48 @@
+[
+  {
+    "dish": "Egg Tarts",
+    "source": "KirbieCravings.com",
+    "serving_size": 48,
+    "ingredients": [
+      { "quantity": "2.75 cups", "name": "all purpose flour" },
+      { "quantity": "1.5 tsp", "name": "baking powder" },
+      { "quantity": "1 cup", "name": "butter" },
+      { "quantity": "1.5 cups", "name": "white sugar" },
+      { "quantity": "1", "name": "egg" },
+      { "quantity": "3 tbsp", "name": "vanilla extract" }
+    ],
+    "instructions": [
+      "Preheat oven to 375°F.",
+      "In a small bowl, stir together flour and baking soda.",
+      "Soften butter by microwaving for about one minute.",
+      "In a large bowl, cream together softened butter and sugar until smooth. Beat in egg and vanilla extract. Gradually blend in the dry ingredients from step 2.",
+      "Roll dough into balls about one inch in diameter. Flatten slightly to create round discs. Place onto cookie sheets.",
+      "Bake for 8 minutes. The cookies should be soft but able to be picked up in one piece without bending too much.",
+      "Cool for a few minutes, then enjoy!",
+      "To save cookies for later, seal in a bag so that they stay soft and don’t harden."
+    ]
+  },
+  {
+    "dish": "Egg Tarts",
+    "source": "Diane",
+    "serving_size": 48,
+    "ingredients": [
+      { "quantity": "2.75 cups", "name": "all purpose flour" },
+      { "quantity": "1.5 tsp", "name": "baking soda" },
+      { "quantity": "1 cup", "name": "butter" },
+      { "quantity": "1.5 cups", "name": "brown sugar" },
+      { "quantity": "1", "name": "egg" },
+      { "quantity": "3 tbsp", "name": "honey" }
+    ],
+    "instructions": [
+      "Preheat oven to 375°F.",
+      "In a small bowl, stir together flour, matcha latte, and baking soda.",
+      "Soften butter by microwaving for about one minute.",
+      "In a large bowl, cream together softened butter and sugar until smooth. Beat in egg and honey. Gradually blend in the dry ingredients from step 2.",
+      "Roll dough into balls about one inch in diameter. Flatten slightly to create round discs. Place onto cookie sheets.",
+      "Bake for 8 minutes. The cookies should be soft but able to be picked up in one piece without bending too much.",
+      "Cool for a few minutes, then enjoy!",
+      "To save cookies for later, seal in a bag so that they stay soft and don’t harden."
+    ]
+  }
+]
