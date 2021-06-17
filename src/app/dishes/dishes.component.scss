@@ -1,11 +1,13 @@
-$card-max-width: 300px;
-$card-margin-horizontal: 10px;
+$card-max-width: 250px;
+$card-margin-horizontal: 20px;
 
 .dishes {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .dish-card {
@@ -15,8 +17,10 @@ $card-margin-horizontal: 10px;
 
 .dish-image {
   max-width: $card-max-width;
+  margin-bottom: 10px;
 }
 
-.dish-name {
+.dish-name,
+.dish-recipe-count {
   text-align: center;
 }

@@ -1,6 +1,7 @@
 <div class="dishes">
   <div class="dish-card" *ngFor="let dish of dishes">
     <img class="dish-image" [src]="dish.photo_path" />
-    <h2 class="dish-name">{{ dish.name }}</h2>
+    <h3 class="dish-name">{{ dish.name }}</h3>
+    <p class="dish-recipe-count">({{ dish.num_recipes }} recipes)</p>
   </div>
 </div>
