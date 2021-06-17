@@ -10,7 +10,10 @@ import { HeaderComponent } from "./header/header.component";
 import { DishesComponent } from "./dishes/dishes.component";
 import { SubmissionFormComponent } from "./submission-form/submission-form.component";
 import { DishComponent } from "./dish/dish.component";
-import { DishFormComponent } from "./dish-form/dish-form.component";
+import {
+  DishFormContent,
+  DishFormComponent,
+} from "./dish-form/dish-form.component";
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { DishFormComponent } from "./dish-form/dish-form.component";
     SubmissionFormComponent,
     DishComponent,
     DishFormComponent,
+    DishFormContent,
   ],
   imports: [
     BrowserModule,
