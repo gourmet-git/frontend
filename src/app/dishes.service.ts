@@ -19,7 +19,7 @@ export class DishesService {
 
   async getRecipes(dishName: string) {
     const recipes = await this.http
-      .get<Recipe[]>("assets/recipes.json")
+      .get<Recipe[]>(`${environment.api_url}/dishes/recipes`)
       .toPromise();
     return recipes.filter((recipe) => recipe.dish === dishName);
   }
