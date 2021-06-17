@@ -30,4 +30,11 @@ export class DishesService {
         .toPromise();
     return dishSaved;
   }
+
+  async  saveRecipe(recipe: Recipe, dishId: string) {
+      const recipeSaved = this.http.post<Recipe>(`${environment.api_url}/dishes/` + dishId + '/recipes', recipe)
+          .toPromise();
+
+      return recipeSaved;
+  }
 }

@@ -1,7 +1,7 @@
 <div class="dishes">
   <div *ngFor="let dish of dishes | async">
     <a class="dish-card" [routerLink]="['/dishes', dish.name]">
-      <img class="dish-image" [src]="dish.photo_path" />
+      <img class="dish-image" [src]="dish.photo" />
       <h4 class="dish-name">{{ dish.name }}</h4>
       <div *ngIf="dish.num_recipes !== 1; else singular">
         <p class="dish-recipe-count">({{ dish.num_recipes }} recipes)</p>

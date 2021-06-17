@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { FormArray, FormBuilder } from "@angular/forms";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import {DishesService} from "../dishes.service";
 
 @Component({
   selector: "submission-form-content",
@@ -11,7 +12,8 @@ export class SubmissionFormContent {
   public dish!: string;
   constructor(
     public activeModal: NgbActiveModal,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dishesService:DishesService
   ) {}
 
   recipe = this.formBuilder.group({
@@ -36,8 +38,13 @@ export class SubmissionFormContent {
   }
 
   onSubmit(): void {
+
     console.warn("Your recipe has been submitted!", this.recipe.value);
-    this.recipe.reset();
+    // this.recipe.reset();
+    const recipe = this.recipe.value;
+
+    this.dishesService.saveRecipe(recipe, this.dish)
+        .then( r => console.log(r));
     this.activeModal.close("Close click");
   }
 }
