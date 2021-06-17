@@ -3,18 +3,18 @@ $card-margin-horizontal: 20px;
 
 .dishes {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .dish-card {
+  display: flex;
+  flex-direction: column;
   max-width: $card-max-width;
   margin: 0 $card-margin-horizontal;
 }
 
 .dish-image {
-  max-width: $card-max-width;
   margin-bottom: 10px;
 }
 
