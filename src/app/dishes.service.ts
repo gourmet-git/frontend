@@ -23,4 +23,11 @@ export class DishesService {
       .toPromise();
     return recipes.filter((recipe) => recipe.dish === dishName);
   }
+
+  async saveDish(dish: Dish) {
+    const dishSaved = this.http
+        .post<Dish>(`${environment.api_url}/dishes`, dish)
+        .toPromise();
+    return dishSaved;
+  }
 }
