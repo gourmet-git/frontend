@@ -1,22 +1,39 @@
 <div *ngIf="dish">
   <h2>{{ dish.name }}</h2>
-
+  <br />
+  <h5 class="recipe-selection-header">Select recipes to compare:</h5>
   <div class="recipe-section">
-    <h4>Source</h4>
-    <div class="recipe-detail" *ngFor="let recipe of recipes">
-      {{ recipe.source }}
+    <!-- placeholder for maintaining grid formatting -->
+    <h4 class="recipe-section-title"></h4>
+
+    <div class="recipes-list">
+      <div class="recipe-name" *ngFor="let recipe of recipes">
+        <p>{{ recipe.source }}</p>
+      </div>
+    </div>
+    <div class="recipes-list">
+      <div class="recipe-name" *ngFor="let recipe of recipes">
+        <p>{{ recipe.source }}</p>
+      </div>
     </div>
   </div>
 
   <div class="recipe-section">
-    <h4>Serving Size</h4>
+    <h4 class="recipe-section-title"></h4>
+    <div class="recipe-detail" *ngFor="let recipe of recipes">
+      <h4>{{ recipe.source }}</h4>
+    </div>
+  </div>
+
+  <div class="recipe-section">
+    <h4 class="recipe-section-title">Serving Size</h4>
     <div class="recipe-detail" *ngFor="let recipe of recipes">
       {{ recipe.serving_size }}
     </div>
   </div>
 
   <div class="recipe-section">
-    <h4>Ingredients</h4>
+    <h4 class="recipe-section-title">Ingredients</h4>
     <ul class="recipe-detail" *ngFor="let recipe of recipes">
       <li *ngFor="let ingredient of recipe.ingredients">
         {{ ingredient.quantity }} {{ ingredient.name }}
@@ -25,7 +42,7 @@
   </div>
 
   <div class="recipe-section">
-    <h4>Instructions</h4>
+    <h4 class="recipe-section-title">Instructions</h4>
     <ol class="recipe-detail" *ngFor="let recipe of recipes">
       <li *ngFor="let step of recipe.instructions">
         {{ step }}

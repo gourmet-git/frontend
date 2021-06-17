@@ -1,4 +1,9 @@
-h4 {
+.recipe-selection-header {
+  margin-left: 2rem;
+  font-style: italic;
+}
+
+.recipe-section-title {
   width: 150px;
   text-align: right;
 }
@@ -8,7 +13,8 @@ h4 {
   margin: 20px 0;
 }
 
-.recipe-detail {
+.recipe-detail,
+.recipes-list {
   flex: 1 1 0;
   padding: 0 20px;
 }
