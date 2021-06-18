@@ -33,9 +33,11 @@ export class DishComponent implements OnInit {
 
     // If dish exists, find recipes for that dish.
     if (this.dish && dishName) {
-      this.recipes = await this.dishesService.getRecipes(dishName);
-      this.recipe1 = this.recipes.length > 0 ? this.recipes[0] : undefined;
-      this.recipe2 = this.recipes.length > 1 ? this.recipes[1] : undefined;
+      this.recipes = this.dish.recipes;
+      this.recipe1 =
+        this.recipes && this.recipes.length > 0 ? this.recipes[0] : undefined;
+      this.recipe2 =
+        this.recipes && this.recipes.length > 1 ? this.recipes[1] : undefined;
     }
   }
 }
