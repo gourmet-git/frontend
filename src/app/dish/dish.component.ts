@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { FormBuilder } from "@angular/forms";
 
 import { Dish, Recipe } from "../types";
 import { DishesService } from "../dishes.service";
@@ -12,6 +13,8 @@ import { DishesService } from "../dishes.service";
 export class DishComponent implements OnInit {
   dish: Dish | undefined;
   recipes: Recipe[] | undefined;
+  recipe1: Recipe | undefined;
+  recipe2: Recipe | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +34,10 @@ export class DishComponent implements OnInit {
     // If dish exists, find recipes for that dish.
     if (this.dish && dishName) {
       this.recipes = this.dish.recipes;
+      this.recipe1 =
+        this.recipes && this.recipes.length > 0 ? this.recipes[0] : undefined;
+      this.recipe2 =
+        this.recipes && this.recipes.length > 1 ? this.recipes[1] : undefined;
     }
   }
 }

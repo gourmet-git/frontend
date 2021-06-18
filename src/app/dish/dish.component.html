@@ -4,52 +4,66 @@
     <submission-form-component [dish]="dish.id"></submission-form-component>
   </div>
   <br />
-  <h5 class="recipe-selection-header">Select recipes to compare:</h5>
-  <div class="recipe-section">
-    <!-- placeholder for maintaining grid formatting -->
-    <h4 class="recipe-section-title"></h4>
-
-    <div class="recipes-list">
-      <div class="recipe-name" *ngFor="let recipe of recipes">
-        <p>{{ recipe.source }}</p>
+  <div *ngIf="recipes && recipes.length > 0; else no_recipes">
+    <h5 class="recipe-selection-header">Select recipes to compare:</h5>
+    <div class="recipe-section">
+      <!-- placeholder for maintaining grid formatting -->
+      <h4 class="recipe-section-title"></h4>
+      <div class="form-group recipe-detail">
+        <select class="form-control" [(ngModel)]="recipe1" name="recipe1-list">
+          <option *ngFor="let recipe of recipes" [ngValue]="recipe">
+            {{ recipe.source }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group recipe-detail">
+        <select class="form-control" [(ngModel)]="recipe2" name="recipe2-list">
+          <option *ngFor="let recipe of recipes" [ngValue]="recipe">
+            {{ recipe.source }}
+          </option>
+        </select>
       </div>
     </div>
-    <div class="recipes-list">
-      <div class="recipe-name" *ngFor="let recipe of recipes">
-        <p>{{ recipe.source }}</p>
+
+    <div class="recipe-section">
+      <h4 class="recipe-section-title">Serving Size</h4>
+      <div class="recipe-detail">
+        {{ recipe1?.serving_size }}
+      </div>
+      <div class="recipe-detail">
+        {{ recipe2?.serving_size }}
       </div>
     </div>
-  </div>
 
-  <div class="recipe-section">
-    <h4 class="recipe-section-title"></h4>
-    <div class="recipe-detail" *ngFor="let recipe of recipes">
-      <h4>{{ recipe.source }}</h4>
+    <div class="recipe-section">
+      <h4 class="recipe-section-title">Ingredients</h4>
+      <ul class="recipe-detail">
+        <li *ngFor="let ingredient of recipe1?.ingredients">
+          {{ ingredient.quantity }} {{ ingredient.name }}
+        </li>
+      </ul>
+      <ul class="recipe-detail">
+        <li *ngFor="let ingredient of recipe2?.ingredients">
+          {{ ingredient.quantity }} {{ ingredient.name }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="recipe-section">
+      <h4 class="recipe-section-title">Instructions</h4>
+      <ol class="recipe-detail">
+        <li *ngFor="let step of recipe1?.instructions">
+          {{ step }}
+        </li>
+      </ol>
+      <ol class="recipe-detail">
+        <li *ngFor="let step of recipe2?.instructions">
+          {{ step }}
+        </li>
+      </ol>
     </div>
   </div>
-
-  <div class="recipe-section">
-    <h4 class="recipe-section-title">Serving Size</h4>
-    <div class="recipe-detail" *ngFor="let recipe of recipes">
-      {{ recipe.serving_size }}
-    </div>
-  </div>
-
-  <div class="recipe-section">
-    <h4 class="recipe-section-title">Ingredients</h4>
-    <ul class="recipe-detail" *ngFor="let recipe of recipes">
-      <li *ngFor="let ingredient of recipe.ingredients">
-        {{ ingredient.quantity }} {{ ingredient.name }}
-      </li>
-    </ul>
-  </div>
-
-  <div class="recipe-section">
-    <h4 class="recipe-section-title">Instructions</h4>
-    <ol class="recipe-detail" *ngFor="let recipe of recipes">
-      <li *ngFor="let step of recipe.instructions">
-        {{ step }}
-      </li>
-    </ol>
-  </div>
+  <ng-template #no_recipes
+    ><h4>There are no recipes for this dish :(</h4></ng-template
+  >
 </div>
