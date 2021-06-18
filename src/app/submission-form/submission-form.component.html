@@ -1,3 +1,7 @@
-<button class="btn btn-lg btn-outline-primary" (click)="open(dish)">
+<button
+  *ngIf="dish"
+  class="btn btn-lg btn-outline-primary"
+  (click)="open(dish)"
+>
   Submit another recipe for this dish!
 </button>

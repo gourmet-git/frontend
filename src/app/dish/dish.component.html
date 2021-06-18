@@ -1,7 +1,7 @@
 <div *ngIf="dish">
   <div class="dish-header">
     <h2>{{ dish.name }}</h2>
-    <submission-form-component [dish]="dish.id"></submission-form-component>
+    <submission-form-component [dish]="dish"></submission-form-component>
   </div>
   <br />
   <div *ngIf="recipes && recipes.length > 0; else no_recipes">
@@ -39,12 +39,12 @@
       <h4 class="recipe-section-title">Ingredients</h4>
       <ul class="recipe-detail">
         <li *ngFor="let ingredient of recipe1?.ingredients">
-          {{ ingredient.quantity }} {{ ingredient.name }}
+          {{ ingredient }}
         </li>
       </ul>
       <ul class="recipe-detail">
         <li *ngFor="let ingredient of recipe2?.ingredients">
-          {{ ingredient.quantity }} {{ ingredient.name }}
+          {{ ingredient }}
         </li>
       </ul>
     </div>
