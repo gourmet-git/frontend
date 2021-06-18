@@ -12,8 +12,8 @@ export class DishesService {
 
   async getDishes() {
     const dishes = await this.http
-      // .get<Dish[]>(`${environment.api_url}/dishes`)
-      .get<Dish[]>("/assets/dishes.json")
+      .get<Dish[]>(`${environment.api_url}/dishes`)
+      // .get<Dish[]>("/assets/dishes.json")
       .toPromise();
     return dishes;
   }
