@@ -1,7 +1,7 @@
 <div *ngIf="dish">
   <h2>{{ dish.name }}</h2>
   <br />
-  <div *ngIf="recipes">
+  <div *ngIf="recipes && recipes.length > 0; else no_recipes">
     <h5 class="recipe-selection-header">Select recipes to compare:</h5>
     <div class="recipe-section">
       <!-- placeholder for maintaining grid formatting -->
@@ -60,4 +60,7 @@
       </ol>
     </div>
   </div>
+  <ng-template #no_recipes
+    ><h4>There are no recipes for this dish :(</h4></ng-template
+  >
 </div>
