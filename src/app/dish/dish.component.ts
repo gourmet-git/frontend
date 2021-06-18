@@ -13,16 +13,12 @@ import { DishesService } from "../dishes.service";
 export class DishComponent implements OnInit {
   dish: Dish | undefined;
   recipes: Recipe[] | undefined;
-  recipesList = this.formBuilder.group({
-    dish: "",
-    photo: "",
-    num_recipes: "",
-  });
+  recipe1: Recipe | undefined;
+  recipe2: Recipe | undefined;
 
   constructor(
     private route: ActivatedRoute,
-    private dishesService: DishesService,
-    private formBuilder: FormBuilder
+    private dishesService: DishesService
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -37,6 +33,8 @@ export class DishComponent implements OnInit {
     // If dish exists, find recipes for that dish.
     if (this.dish && dishName) {
       this.recipes = await this.dishesService.getRecipes(dishName);
+      this.recipe1 = this.recipes.length > 0 ? this.recipes[0] : undefined;
+      this.recipe2 = this.recipes.length > 1 ? this.recipes[1] : undefined;
     }
   }
 }
