@@ -20,8 +20,22 @@ export class DishesService {
 
   async getRecipes(dishName: string) {
     const recipes = await this.http
-      .get<Recipe[]>("assets/recipes.json")
+      .get<Recipe[]>(`${environment.api_url}/dishes/recipes`)
       .toPromise();
     return recipes.filter((recipe) => recipe.dish === dishName);
+  }
+
+  async saveDish(dish: Dish) {
+    const dishSaved = this.http
+        .post<Dish>(`${environment.api_url}/dishes`, dish)
+        .toPromise();
+    return dishSaved;
+  }
+
+  async  saveRecipe(recipe: Recipe, dishId: string) {
+      const recipeSaved = this.http.post<Recipe>(`${environment.api_url}/dishes/` + dishId + '/recipes', recipe)
+          .toPromise();
+
+      return recipeSaved;
   }
 }

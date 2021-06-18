@@ -28,6 +28,7 @@ export class DishComponent implements OnInit {
 
     // Find the dish that corresponds with the name provided in route.
     const dishes = await this.dishesService.getDishes();
+
     this.dish = dishes.find((dish) => dish.name === dishName);
 
     // If dish exists, find recipes for that dish.
